@@ -1,13 +1,12 @@
-/* font-family: 'Allerta Stencil', sans-serif; */
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     max-height: 640px;
 }
 
-main {
+main{
     width: 100%;
     height: auto;
     list-style: none;
@@ -16,21 +15,16 @@ main {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-
 /*all titles*/
-
-.titles {
+.titles{
     margin-bottom: 10px;
     text-align: center;
     font-size: 3rem;
     font-family: 'Allerta Stencil', sans-serif;
 }
 
-
 /*first container-buttons*/
-
-.button-container {
+.button-container{
     width: 33.3%;
     display: flex;
     flex-direction: column;
@@ -40,10 +34,8 @@ main {
     flex-wrap: wrap;
 }
 
-
 /*Buttons*/
-
-.game-button {
+.game-button{
     width: 30%;
     height: 50px;
     margin-top: 15px;
@@ -51,22 +43,18 @@ main {
     font-family: 'Allerta Stencil', sans-serif;
 }
 
-
 /*Second container-canvas*/
-
-#canva {
+#canva{
     width: 25%;
 }
 
-
 /*Third container-score*/
-
-.score-container {
+.score-container{
     width: 33.3%;
 }
-
-.score {
+.score{
     width: 90%;
     height: 90%;
     background-color: white;
 }
+

@@ -22,9 +22,9 @@ function drawSq(x, y, color) {
 
 //Create the board
 let board = [];
-for (r = 0; r < ROWS; r++) {
+for(r = 0; r < ROWS; r++){
     board[r] = [];
-    for (c = 0; c < COLS; c++) {
+    for(c = 0; c < COLS; c++){
         board[r][c] = EMPTY;
     }
 }
@@ -213,12 +213,12 @@ Piece.prototype.fill = function(color) {
 }
 
 //Draw a piece to the board
-Piece.prototype.draw = function() {
+Piece.prototype.draw = function(){
     this.fill(this.color);
 }
 
 //Undraw a piece
-Piece.prototype.unDraw = function() {
+Piece.prototype.unDraw = function(){
     this.fill(EMPTY);
 }
 
@@ -314,11 +314,10 @@ Piece.prototype.lock = function() {
             }
             // increment the score
             score += 10;
-        }
-    }
-    // update the board
+		}
+	}
+	// update the board
     drawBoard();
-
     // update the score
     scoreElement.innerHTML = score;
 }
@@ -339,7 +338,7 @@ Piece.prototype.collision = function(x, y, piece) {
             if (newX < 0 || newX >= COLS || newY >= ROWS) {
                 return true;
             }
-            // skip newY < 0; board [-1] will crush our game
+            // skip newY < 0; board -1 will crush our game
             if (newY < 0) {
                 continue;
             }
@@ -373,19 +372,19 @@ function CONTROL(event) {
 //Drop the piece every 1sec
 let dropStart = Date.now();
 let gameOver = false;
-
-function drop() {
+function drop(){
     let now = Date.now();
     let delta = now - dropStart;
-    if (delta > 500) {
+    if(delta > 1000){
         p.moveDown();
         dropStart = Date.now();
     }
-    if (!gameOver) {
+    if( !gameOver){
         requestAnimationFrame(drop);
     }
 }
 drop();
+
 
 //This function start all
 /*function start(){
