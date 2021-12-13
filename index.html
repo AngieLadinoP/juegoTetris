@@ -8,30 +8,35 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
-    <script src="./script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <!--     <script src="./script.js"></script> -->
     <title>Tetris</title>
 </head>
 
-<body onload="inicializa()">
-    <main>
-        <section class="button container">
-            <h1>Tetris game</h1>
+<body>
+    <main class="game-container">
+        <section class="button-container">
+            <li class="titles">TETRIS <br/> GAME</li>
             <input type="button" value="PAUSE" class="game-button" onclick="pauseGame()">
-            <input type="button" value="RE-START" class="game-button" onclick="restartGame()">
+            <input type="button" value="RE-START" class="game-button" onclick="javascript:window.location.reload()">
         </section>
-        <canvas id="canva" width="100" height="300" style=""></canvas>
-        <div>
-            <h2>
-                Next
-            </h2>
-            <h2>
-                Score
-            </h2>
-            <p></p>
-        </div>
+        <canvas id="canva" width="200" height="400" style=" border: solid 2px black;"></canvas>
+        <section class="game-statistics">
+            <div id="next-piece">
+                <h2 class="titles">
+                    Next
+                </h2>
+                <canvas id="canva-piece" width="80" height="80" style=" border: solid 2px black;"></canvas>
+            </div>
+            <div id="score-container">
+                <h2 class="titles">
+                    Score:
+                </h2>
+                <p class="titles" id="score">0</p>
+            </div>
+        </section>
     </main>
-
 </body>
+<script src="./script.js"></script>
 
 </html>
