@@ -1,3 +1,5 @@
+/* font-family: 'Allerta Stencil', sans-serif; */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +8,20 @@
 }
 
 main {
+    width: 100%;
     height: auto;
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.game-container {
-    width: 90%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
 }
 
 
 /*all titles*/
 
-.titles {
-    margin-top: 10px;
+#titles {
+    margin-bottom: 10px;
     text-align: center;
     font-size: 3rem;
     font-family: 'Allerta Stencil', sans-serif;
@@ -36,7 +31,7 @@ main {
 /*first container-buttons*/
 
 .button-container {
-    grid-column: 1 / span 1;
+    width: 33.3%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +44,8 @@ main {
 /*Buttons*/
 
 .game-button {
-    height: auto;
+    width: 30%;
+    height: 50px;
     margin-top: 15px;
     font-size: 1.3rem;
     font-family: 'Allerta Stencil', sans-serif;
@@ -59,43 +55,18 @@ main {
 /*Second container-canvas*/
 
 #canva {
-    grid-column: 2/span 1;
-    margin: auto;
+    width: 25%;
 }
 
 
-/*Third container-game statistics*/
+/*Third container-score*/
 
-.game-statistics {
-    grid-column: 3/span 1;
-    margin: auto;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+.score-container {
+    width: 33.3%;
 }
 
-#next-piece {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-@media (max-width: 768px) {
-    .game-container {
-        grid-template-rows: 1fr 2fr 1fr;
-        grid-template-columns: 1fr;
-    }
-    .button-container {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-    }
-    #canva {
-        grid-row: 2/span 1;
-        grid-column: 1 / span 1;
-    }
-    .game-statistics {
-        grid-row: 3/span 1;
-        grid-column: 1 / span 1;
-    }
+.score {
+    width: 90%;
+    height: 90%;
+    background-color: white;
 }
