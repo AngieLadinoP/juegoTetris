@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
+    overflow-x: hidden;
+=======
     max-height: 640px;
 }
 
@@ -14,9 +17,22 @@ main{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
 }
 /*all titles*/
+<<<<<<< HEAD
+
+.game-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.titles {
+=======
 .titles{
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     margin-bottom: 10px;
     text-align: center;
     font-size: 3rem;
@@ -24,8 +40,16 @@ main{
 }
 
 /*first container-buttons*/
+<<<<<<< HEAD
+
+.button-container {
+    list-style: none;
+    grid-column: 1 /span 1;
+    margin: auto;
+=======
 .button-container{
     width: 33.3%;
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,20 +59,74 @@ main{
 }
 
 /*Buttons*/
+<<<<<<< HEAD
+
+.game-button {
+    height: 80px;
+    width: 80%;
+=======
 .game-button{
     width: 30%;
     height: 50px;
     margin-top: 15px;
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     font-size: 1.3rem;
+    margin: 5px;
     font-family: 'Allerta Stencil', sans-serif;
 }
 
 /*Second container-canvas*/
+<<<<<<< HEAD
+
+.canvas-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+=======
 #canva{
     width: 25%;
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
 }
 
 /*Third container-score*/
+<<<<<<< HEAD
+
+.game-statistics {
+    grid-column: 3 /span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 600px) {
+    .game-container {
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+    .button-container {
+        grid-row: 1 /span 1;
+        grid-column: 1 /span 1;
+        margin: auto;
+    }
+    .canvas-game {
+        grid-row: 2 /span 1;
+        grid-column: 1 /span 1;
+        margin-top: 0px;
+    }
+    .game-statistics {
+        grid-row: 3 /span 1;
+        grid-column: 1 /span 1;
+        margin-top: 0;
+    }
+    .game-button {
+        height: 30px;
+    }
+}
+=======
 .score-container{
     width: 33.3%;
 }
@@ -58,3 +136,4 @@ main{
     background-color: white;
 }
 
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445

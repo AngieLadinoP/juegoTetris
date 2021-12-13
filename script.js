@@ -1,6 +1,7 @@
 let canvas = document.getElementById("canva")
 let ctx = canvas.getContext('2d')
 
+
 //Number of columns and rows the board will have 
 const COLS = 10;
 const ROWS = 20;
@@ -15,9 +16,11 @@ const scoreElement = document.getElementById("score");
 function drawSq(x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-
     ctx.strokeStyle = "white";
     ctx.strokeRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+
+
+
 }
 
 //Create the board
@@ -161,14 +164,15 @@ const Z = [
 
 //Array with pieces and their colors
 const PIECES = [
-    [Z, "red"],
-    [S, "green"],
-    [T, "yellow"],
-    [O, "blue"],
-    [L, "purple"],
-    [I, "cyan"],
-    [J, "orange"]
+    [Z, "#22363D"],
+    [S, "#045775"],
+    [T, "#D9BDA0"],
+    [O, "#BA674E"],
+    [L, "#8F1D13"],
+    [I, "#6B735A"],
+    [J, "#5D8AA6"]
 ];
+
 
 //Generate random pieces. Choose a random number that will be the index to select the piece from the array
 function randomPiece() {
@@ -274,9 +278,11 @@ Piece.prototype.rotate = function() {
 
 let score = 0;
 
+
+// Lock the piece when it reaches the end or when it is over another figure
 Piece.prototype.lock = function() {
-    for (r = 0; r < this.actFigure.length; r++) {
-        for (c = 0; c < this.actFigure.length; c++) {
+    for (r = 0; r < this.actFigure.length; r++) { // Array's rows  of the figure's specific position 
+        for (c = 0; c < this.actFigure.length; c++) { // Array's columns  of the figure's specific position 
             //We skip the empty sq
             if (!this.actFigure[r][c]) {
                 continue;
@@ -294,11 +300,11 @@ Piece.prototype.lock = function() {
         }
     }
 
-    //Remove full rows
+    //Remove full rows and add points to the score 
     for (r = 0; r < ROWS; r++) {
         let isRowFull = true;
         for (c = 0; c < COLS; c++) {
-            isRowFull = isRowFull && (board[r][c] != EMPTY);
+            isRowFull = isRowFull && (board[r][c] != EMPTY); // The row is full, all of the sq are taken by and have a color
         }
         if (isRowFull) {
             // if the row is full
@@ -312,7 +318,7 @@ Piece.prototype.lock = function() {
             for (c = 0; c < COLS; c++) {
                 board[0][c] = EMPTY;
             }
-            // increment the score
+            // increment the score for each full row
             score += 10;
 		}
 	}
@@ -335,7 +341,7 @@ Piece.prototype.collision = function(x, y, piece) {
             let newY = this.y + r + y;
 
             // conditions
-            if (newX < 0 || newX >= COLS || newY >= ROWS) {
+            if (newX < 0 || newX >= COLS || newY >= ROWS) { // Collision due to the canva's margin
                 return true;
             }
             // skip newY < 0; board -1 will crush our game
@@ -369,13 +375,17 @@ function CONTROL(event) {
     }
 }
 
-//Drop the piece every 1sec
-let dropStart = Date.now();
+//Drop the piece 
+let dropStart = Date.now(); //returns the number of milliseconds 
 let gameOver = false;
 function drop(){
     let now = Date.now();
     let delta = now - dropStart;
+<<<<<<< HEAD
+    if (delta > 550) {
+=======
     if(delta > 1000){
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
         p.moveDown();
         dropStart = Date.now();
     }
@@ -386,6 +396,12 @@ function drop(){
 drop();
 
 
+<<<<<<< HEAD
+// Quit game and start a new one
+function restart() {
+    window.location.reload()
+}
+=======
 //This function start all
 /*function start(){
     canvas = document.getElementById("canva")
@@ -393,3 +409,4 @@ drop();
     drawBoard();
 	drop();
 }*/
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
