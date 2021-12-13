@@ -4,21 +4,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-height: 640px;
-}
-
-main {
-    width: 100%;
-    height: auto;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    overflow-x: hidden;
 }
 
 
 /*all titles*/
+
+.game-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 
 .titles {
     margin-bottom: 10px;
@@ -31,7 +28,9 @@ main {
 /*first container-buttons*/
 
 .button-container {
-    width: 33.3%;
+    list-style: none;
+    grid-column: 1 /span 1;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,29 +43,57 @@ main {
 /*Buttons*/
 
 .game-button {
-    width: 30%;
-    height: 50px;
-    margin-top: 15px;
+    height: 80px;
+    width: 80%;
     font-size: 1.3rem;
+    margin: 5px;
     font-family: 'Allerta Stencil', sans-serif;
 }
 
 
 /*Second container-canvas*/
 
-#canva {
-    width: 25%;
+.canvas-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 
 /*Third container-score*/
 
-.score-container {
-    width: 33.3%;
+.game-statistics {
+    grid-column: 3 /span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
 }
 
-.score {
-    width: 90%;
-    height: 90%;
-    background-color: white;
+@media only screen and (max-width: 600px) {
+    .game-container {
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+    .button-container {
+        grid-row: 1 /span 1;
+        grid-column: 1 /span 1;
+        margin: auto;
+    }
+    .canvas-game {
+        grid-row: 2 /span 1;
+        grid-column: 1 /span 1;
+        margin-top: 0px;
+    }
+    .game-statistics {
+        grid-row: 3 /span 1;
+        grid-column: 1 /span 1;
+        margin-top: 0;
+    }
+    .game-button {
+        height: 30px;
+    }
 }
