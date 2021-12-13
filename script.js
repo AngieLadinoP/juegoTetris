@@ -25,9 +25,9 @@ function drawSq(x, y, color) {
 
 //Create the board
 let board = [];
-for (r = 0; r < ROWS; r++) {
+for(r = 0; r < ROWS; r++){
     board[r] = [];
-    for (c = 0; c < COLS; c++) {
+    for(c = 0; c < COLS; c++){
         board[r][c] = EMPTY;
     }
 }
@@ -217,12 +217,12 @@ Piece.prototype.fill = function(color) {
 }
 
 //Draw a piece to the board
-Piece.prototype.draw = function() {
+Piece.prototype.draw = function(){
     this.fill(this.color);
 }
 
 //Undraw a piece
-Piece.prototype.unDraw = function() {
+Piece.prototype.unDraw = function(){
     this.fill(EMPTY);
 }
 
@@ -320,11 +320,10 @@ Piece.prototype.lock = function() {
             }
             // increment the score for each full row
             score += 10;
-        }
-    }
-    // update the board
+		}
+	}
+	// update the board
     drawBoard();
-
     // update the score
     scoreElement.innerHTML = score;
 }
@@ -345,7 +344,7 @@ Piece.prototype.collision = function(x, y, piece) {
             if (newX < 0 || newX >= COLS || newY >= ROWS) { // Collision due to the canva's margin
                 return true;
             }
-            // skip newY < 0; board [-1] will crush our game
+            // skip newY < 0; board -1 will crush our game
             if (newY < 0) {
                 continue;
             }
@@ -379,22 +378,35 @@ function CONTROL(event) {
 //Drop the piece 
 let dropStart = Date.now(); //returns the number of milliseconds 
 let gameOver = false;
-
-function drop() {
+function drop(){
     let now = Date.now();
     let delta = now - dropStart;
+<<<<<<< HEAD
     if (delta > 550) {
+=======
+    if(delta > 1000){
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
         p.moveDown();
         dropStart = Date.now();
     }
-    if (!gameOver) {
+    if( !gameOver){
         requestAnimationFrame(drop);
     }
 }
 drop();
 
 
+<<<<<<< HEAD
 // Quit game and start a new one
 function restart() {
     window.location.reload()
 }
+=======
+//This function start all
+/*function start(){
+    canvas = document.getElementById("canva")
+    ctx = canvas.getContext('2d')
+    drawBoard();
+	drop();
+}*/
+>>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
