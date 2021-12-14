@@ -253,11 +253,11 @@ Piece.prototype.moveLeft = function() {
     }
     //Rotate the piece
 Piece.prototype.rotate = function() {
-    let nextPat = this.figure[(this.figureN + 1) % this.figure.length];
+    let nextPat = this.figure[(this.figureN + 1) % this.figure.length]; // Increment the figure number 
     let kick = 0;
 
     if (this.collision(0, 0, nextPat)) {
-        if (this.x < COLS / 2) {
+        if (this.x > COLS / 2) { // Collision in the right wall
             kick = -1; //We need to move the piece to the left
         } else {
             kick = 1; //We need to move the piece to the right
@@ -293,7 +293,7 @@ Piece.prototype.lock = function() {
             }
 
             //We lock the piece
-            board[this.y + r][this.x + c] = this.color;
+            board[this.y + r][this.x + c] = this.color; //To lock it, we just need to draw the squares of the figure on the board
         }
     }
 
@@ -301,7 +301,7 @@ Piece.prototype.lock = function() {
     for (r = 0; r < ROWS; r++) {
         let isRowFull = true;
         for (c = 0; c < COLS; c++) {
-            isRowFull = isRowFull && (board[r][c] != EMPTY); // The row is full, all of the sq are taken by and have a color
+            isRowFull = isRowFull && (board[r][c] != EMPTY); // The row is full, all of the sq are taken and have a color
         }
         if (isRowFull) {
             // if the row is full
@@ -372,7 +372,7 @@ function CONTROL(event) {
     }
 }
 
-//Drop the piece 
+//Drop the piece every half second 
 let dropStart = Date.now(); //returns the number of milliseconds 
 let gameOver = false;
 
