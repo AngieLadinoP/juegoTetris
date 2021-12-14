@@ -1,26 +1,12 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
     overflow-x: hidden;
-=======
-    max-height: 640px;
 }
 
-main{
-    width: 100%;
-    height: auto;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
-}
+
 /*all titles*/
-<<<<<<< HEAD
 
 .game-container {
     margin-top: 50px;
@@ -30,26 +16,19 @@ main{
 }
 
 .titles {
-=======
-.titles{
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     margin-bottom: 10px;
     text-align: center;
     font-size: 3rem;
     font-family: 'Allerta Stencil', sans-serif;
 }
 
+
 /*first container-buttons*/
-<<<<<<< HEAD
 
 .button-container {
     list-style: none;
     grid-column: 1 /span 1;
     margin: auto;
-=======
-.button-container{
-    width: 33.3%;
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,39 +37,39 @@ main{
     flex-wrap: wrap;
 }
 
+
 /*Buttons*/
-<<<<<<< HEAD
 
 .game-button {
     height: 80px;
     width: 80%;
-=======
-.game-button{
-    width: 30%;
-    height: 50px;
-    margin-top: 15px;
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
     font-size: 1.3rem;
     margin: 5px;
     font-family: 'Allerta Stencil', sans-serif;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    background-color: #BA674E;
+    color: white;
 }
 
+.game-button:hover {
+    background-color: #5D8AA6;
+    color: white;
+}
+
+
 /*Second container-canvas*/
-<<<<<<< HEAD
 
 .canvas-game {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-=======
-#canva{
-    width: 25%;
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
 }
 
+
 /*Third container-score*/
-<<<<<<< HEAD
 
 .game-statistics {
     grid-column: 3 /span 1;
@@ -103,7 +82,7 @@ main{
 
 @media only screen and (max-width: 600px) {
     .game-container {
-        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 2fr 1fr;
         grid-template-columns: 1fr;
         margin-top: 0;
     }
@@ -126,14 +105,3 @@ main{
         height: 30px;
     }
 }
-=======
-.score-container{
-    width: 33.3%;
-}
-.score{
-    width: 90%;
-    height: 90%;
-    background-color: white;
-}
-
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
