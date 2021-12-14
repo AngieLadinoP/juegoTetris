@@ -5,7 +5,7 @@ let ctx = canvas.getContext('2d')
 const COLS = 10;
 const ROWS = 20;
 // Block size: it is a square, width and height are going to be the same 
-const BLOCK_SIZE = 20;
+const BLOCK_SIZE = 25;
 //Color of squares that are not taken by any figure
 const EMPTY = "#EFEFEF";
 //Variable of Score
@@ -190,7 +190,7 @@ function Piece(figure, color) {
 
     //Define the location of the pieces when they appear on the board for the firs time
     this.x = 3; // the image appears in the center
-    this.y = -4; //The image is over the board and starts falling
+    this.y = -2; //The image is over the board and starts falling
 }
 /* In order to move the figure (left, right, down) we need to:
  - Evaluate future position of the figure to know if threre are any collisions
@@ -206,7 +206,7 @@ Piece.prototype.fill = function(color) {
     for (r = 0; r < this.actFigure.length; r++) { // Array's rows  of the figure's specific position 
         for (c = 0; c < this.actFigure.length; c++) { // Array's columns  of the figure's specific position 
             //We draw only the occupied sq
-            if (this.actFigure[r][c]) { // each square in the array of the specific position of the figure 
+            if (this.actFigure[r][c]) { // each square in the array of the specific position of the figure true=1 false=0
                 drawSq(this.x + c, this.y + r, color);
             }
         }
@@ -268,7 +268,7 @@ Piece.prototype.rotate = function() {
         this.unDraw();
         this.x += kick;
         this.figureN = (this.figureN + 1) % this.figure.length;
-        this.actFigure = this.figure[this.figureN];
+        this.actFigure = this.figure[this.figureN]; // selected figure in a specific position
         this.draw();
     }
 }
@@ -327,9 +327,9 @@ Piece.prototype.lock = function() {
 
 // collision function
 Piece.prototype.collision = function(x, y, piece) {
-    for (r = 0; r < piece.length; r++) {
+    for (r = 0; r < piece.length; r++) { //Check all the squares of the figure
         for (c = 0; c < piece.length; c++) {
-            // if the square is empty, we skip it
+            // if the square is empty within the piece array, we skip it
             if (!piece[r][c]) {
                 continue;
             }
@@ -341,7 +341,7 @@ Piece.prototype.collision = function(x, y, piece) {
             if (newX < 0 || newX >= COLS || newY >= ROWS) { // Collision due to the canva's margin
                 return true;
             }
-            // skip newY < 0; board -1 will crush our game
+            // skip newY < 0; board[-1] will crush our game because there is not index with -1
             if (newY < 0) {
                 continue;
             }
