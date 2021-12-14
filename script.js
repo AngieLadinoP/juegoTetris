@@ -1,7 +1,6 @@
 let canvas = document.getElementById("canva")
 let ctx = canvas.getContext('2d')
 
-
 //Number of columns and rows the board will have 
 const COLS = 10;
 const ROWS = 20;
@@ -18,16 +17,14 @@ function drawSq(x, y, color) {
     ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
     ctx.strokeStyle = "white";
     ctx.strokeRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-
-
-
 }
+
 
 //Create the board
 let board = [];
-for(r = 0; r < ROWS; r++){
+for (r = 0; r < ROWS; r++) {
     board[r] = [];
-    for(c = 0; c < COLS; c++){
+    for (c = 0; c < COLS; c++) {
         board[r][c] = EMPTY;
     }
 }
@@ -193,12 +190,12 @@ function Piece(figure, color) {
 
     //Define the location of the pieces when they appear on the board for the firs time
     this.x = 3; // the image appears in the center
-    this.y = -2; //The image is over the board and starts falling
+    this.y = -4; //The image is over the board and starts falling
 }
 /* In order to move the figure (left, right, down) we need to:
  - Evaluate future position of the figure to know if threre are any collisions
  - Undraw the current figure
- - Translate the figure's coordinates to the desire place
+ - Move the figure's coordinates to the desire place
  - Draw the figure
  */
 
@@ -217,12 +214,12 @@ Piece.prototype.fill = function(color) {
 }
 
 //Draw a piece to the board
-Piece.prototype.draw = function(){
+Piece.prototype.draw = function() {
     this.fill(this.color);
 }
 
 //Undraw a piece
-Piece.prototype.unDraw = function(){
+Piece.prototype.unDraw = function() {
     this.fill(EMPTY);
 }
 
@@ -320,9 +317,9 @@ Piece.prototype.lock = function() {
             }
             // increment the score for each full row
             score += 10;
-		}
-	}
-	// update the board
+        }
+    }
+    // update the board
     drawBoard();
     // update the score
     scoreElement.innerHTML = score;
@@ -378,35 +375,23 @@ function CONTROL(event) {
 //Drop the piece 
 let dropStart = Date.now(); //returns the number of milliseconds 
 let gameOver = false;
-function drop(){
+
+function drop() {
     let now = Date.now();
     let delta = now - dropStart;
-<<<<<<< HEAD
     if (delta > 550) {
-=======
-    if(delta > 1000){
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445
         p.moveDown();
         dropStart = Date.now();
     }
-    if( !gameOver){
+    if (!gameOver) {
         requestAnimationFrame(drop);
     }
 }
 drop();
 
 
-<<<<<<< HEAD
+
 // Quit game and start a new one
 function restart() {
     window.location.reload()
 }
-=======
-//This function start all
-/*function start(){
-    canvas = document.getElementById("canva")
-    ctx = canvas.getContext('2d')
-    drawBoard();
-	drop();
-}*/
->>>>>>> f2d85fb064ff3e94058550f7c72037168322d445

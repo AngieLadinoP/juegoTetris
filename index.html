@@ -16,21 +16,12 @@
     <main class="game-container">
         <section class="button-container">
             <li class="titles">TETRIS <br/> GAME</li>
-            <input type="button" value="PAUSE" class="game-button" onclick="pauseGame()">
             <input type="button" value="QUIT" class="game-button" onclick="restart()">
         </section>
         <section class="canvas-game">
             <canvas id="canva" width="200" height="400" style=" border: solid 2px black;"></canvas>
         </section>
         <section class="game-statistics">
-            <div class="next-piece">
-                <h2 class="titles">
-                    Next
-                </h2>
-                <div class="canvas-game">
-                    <canvas id="canva-piece" width="80" height="80" style=" border: solid 2px black;"></canvas>
-                </div>
-            </div>
             <div class="score">
                 <h2 class="titles">
                     Score
@@ -41,4 +32,5 @@
     </main>
     <script src="./script.js"></script>
 </body>
+
 </html>
